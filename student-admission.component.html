@@ -1,0 +1,133 @@
+
+<body>
+    
+        <h1>STUDENT APPLICATION FORM</h1><br>
+   
+    <h2>STUDENT DETAILS</h2><br>
+
+<label>FirstName:</label>
+<input type="text" id="txtfname" name="txtfname" [(ngModel)]="studentDetail.FirstName"><br><br>
+
+<label>LastName:</label><input type="text"  [(ngModel)]="studentDetail.LastName"><br>
+
+<label>Age</label><input type="text"  [(ngModel)]="studentDetail.Age"><br>
+
+<label>Gender:</label>
+<div *ngFor="let j of genders ">
+    <input type="radio" id="radiostd" name="radiostd"[(ngModel)]="studentDetail.Gender"value="{{j.GenderName}}"/>{{j.GenderName}}
+
+    </div><br><br>
+
+<label>Adress:</label><input type="text"  [(ngModel)]="studentDetail.Adress"><br><br>
+
+<label>DOB:</label><input type="date" [(ngModel)]="studentDetail.DOB"><br><br>
+
+<label>Country:</label><select id="ddlcountry" name="ddlcountry" (change)="GetState(studentDetail.CountryId  )" [(ngModel)]="studentDetail.CountryId">
+    <option value="0"> select Country</option>
+    <option *ngFor="let c  of countries"value="{{c.CountryId}}">{{c.CountryName}}</option></select><br><br>
+
+    <label>State:</label><select id="ddlState" name="ddlState" (change)="Getcities(studentDetail.StateId  )"[(ngModel)]="studentDetail.StateId">
+        <option *ngFor="let c of states"value="{{c.StateId}}">{{c.StateName}}</option></select><br><br>
+
+        <label>City:</label> <select id="ddlcities" name="ddlcities" [(ngModel)]="studentDetail.CityId">
+            <option *ngFor="let c of cities"value="{{c.CityId}}">{{c.CityName}}</option></select><br><br>
+
+<label>MobileNumber:</label><input type="number" [(ngModel)]="studentDetail.MobileNumber"><br><br>
+<label>IdentificationMarks:</label><input type="text"  [(ngModel)]="studentDetail.IdentificationMarks"><br><br>
+
+
+
+            <label>Community:</label><input type="text" [(ngModel)]="studentDetail.Community"><br><br>
+            <label>Mother Tongue:</label><input type="text" [(ngModel)]="studentDetail.Mothertongue"><br><br>
+
+            <label>Religion:</label><input type="text" [(ngModel)]="studentDetail.Religion"><br><br>
+            <label>Nationality:</label><input type="text" [(ngModel)]="studentDetail.Nationality"><br><br>
+
+
+<h1>GaurdianDetails</h1><br>
+
+<label>FirstName:</label><input type="text" [(ngModel)]="gaurdianDetail.FirstName"><br><br>
+<label>LastName:</label><input type="text" [(ngModel)]="gaurdianDetail.LastName"><br><br><br>
+
+<label>Gender:</label><br>
+<div *ngFor="let k of genders ">
+    <input type="radio" id="radiogd" name="radiogd"[(ngModel)]="gaurdianDetail.Gender"value="{{k.GenderName}}"/>{{k.GenderName}}
+    
+    </div><br><br>
+    <label>MobileNumber:</label><input type="number" [(ngModel)]="gaurdianDetail.MobileNumber"><br><br>
+    <label>Occupation:</label><input type="TEXT" ID="TXTNAME" name="TXTNAME" [(ngModel)]="gaurdianDetail.Occupation"><br><br>
+    <label>Email:</label><input type="TEXT" ID="TXTemail" name="TXTemail" [(ngModel)]="gaurdianDetail.Email"><br><br>
+    <label>Mobile Number:</label><input type="text" [(ngModel)]="studentDetail.MobileNumber"><br><br>
+
+    <label>Adress:</label><input type="textarea" ID="TXTadress" name="TXTadress" [(ngModel)]="gaurdianDetail.Adress"><br><br>
+    <label>Country:</label><select id="ddlcountry" name="ddlcountry" (change)="GetState(gaurdianDetail.CountryId  )" [(ngModel)]="gaurdianDetail.CountryId">
+    <option value="0"> select Country</option>
+    <option *ngFor="let c  of countries"value="{{c.CountryId}}">{{c.CountryName}}</option></select><br><br>
+
+    <label>State:</label><select id="ddlState" name="ddlState" (change)="Getcities(gaurdianDetail.StateId  )"[(ngModel)]="gaurdianDetail.StateId">
+        <option *ngFor="let c of states"value="{{c.StateId}}">{{c.StateName}}</option></select><br><br>
+
+        <label>City:</label><select id="ddlcities" name="ddlcities" [(ngModel)]="gaurdianDetail.CityId">
+            <option *ngFor="let c of cities"value="{{c.CityId}}">{{c.CityName}}</option></select><br><br>
+            
+            <label>Relationship:</label><input type="text" ID="TXTRE" name="TXTRE" [(ngModel)]="gaurdianDetail.Relationship"><br><br>
+            <label>Qualification:</label><input type="text" ID="TXT" name="TXTR" [(ngModel)]="gaurdianDetail.Qualification"><br><br>
+
+
+
+<h1>Previous School Details</h1><br><br>
+
+<label>NameoftheSchool:</label><input type="text" ID="txtNameoftheSchool" name="txtNameoftheSchool" [(ngModel)]="previousSchoolDetail.NameoftheSchool"><br><br>
+<label>StartYear:</label><input type="number" ID="txtStartYear" name="txtStartYear" [(ngModel)]="previousSchoolDetail.StartYear"><br><br>
+<label>EndYear:</label><input type="number" ID="txtEndYear" name="txtEndYear" [(ngModel)]="previousSchoolDetail.EndYear"><br><br>
+<label>DurationYear:</label><input type="text" ID="txtDuration" name="txtDuration " [(ngModel)]="previousSchoolDetail.DurationYear"><br><br>
+
+<label>Class From:</label><input type="text" ID="txtclassfrom" name="txtclassfrom" [(ngModel)]="previousSchoolDetail.ClassFrom"><br><br>
+<label>Class To:</label><input type="text" ID="txtClassTo" name="txtClassTo" [(ngModel)]="previousSchoolDetail.ClassTo"><br><br>
+
+
+<label>Country:</label><select id="ddlcountry" name="ddlcountry" (change)="GetState(previousSchoolDetail.CountryId  )" [(ngModel)]="previousSchoolDetail.CountryId">
+    <option value="0"> select Country</option>
+    <option *ngFor="let c  of countries"value="{{c.CountryId}}">{{c.CountryName}}</option></select><br><br>
+
+    <label>State:</label><select id="ddlState" name="ddlState" (change)="Getcities(previousSchoolDetail.StateId  )"[(ngModel)]="previousSchoolDetail.StateId">
+        <option *ngFor="let c of states"value="{{c.StateId}}">{{c.StateName}}</option></select><br><br>
+
+        <label>City:</label><select id="ddlcities" name="ddlcities" [(ngModel)]="previousSchoolDetail.CityId">
+            <option *ngFor="let c of cities"value="{{c.CityId}}">{{c.CityName}}</option></select>
+
+
+          <br><br>  <button (click)="Onsave()">Save</button><br><br>
+
+<h1>Current Joining School Details</h1><br><br>
+
+<label>Date Of Join:</label><input type="text" ID="txtDateofjoin" name="txtDateofjoin"   [(ngModel)]="currentJoiningSchoolDetail.DateOfJoin"><br><br>
+
+<label>Class:</label><input type="text" ID="txtClass" name="txtClass"   [(ngModel)]="currentJoiningSchoolDetail.Class"><br><br>
+<label>Medium:</label><input type="text" ID="txtmedium" name="txtmedium"  [(ngModel)]="currentJoiningSchoolDetail.Medium"><br><br>
+<label>BloodGroup:</label><input type="text" ID="txtBloodGroup" name="txtBloodGroup"  [(ngModel)]="currentJoiningSchoolDetail.BloodGroup"><br><br>
+<label>Section:</label><input type="text" ID="txtSection" name="txtSection"  [(ngModel)]="currentJoiningSchoolDetail.Section"><br><br>
+<!-- <label>AdmissionNumber:</label><input type="text" ID="txtAdmissionNumber" name="txtAdmissionNumber"  [(ngModel)]="currentJoiningSchoolDetail.AdmissionNumber"><br><br> -->
+
+
+
+<button (click)="AddCurrent()">Submit</button>
+
+
+<table>
+    
+        <tr>
+            <th>AdmissionNumber</th>
+            <th>AdmissionDate</th>
+    
+        </tr>
+        <tr *ngFor="let a of admissionlist">
+            <td>{{a.AdmissionNumber}}</td>
+            <td>{{a.AdmissionDate}}</td>
+    </tr>
+    
+    
+    
+</table>
+
+</body>
